@@ -28,7 +28,6 @@ public class MenuController {
     @RequestMapping("two")
     public List<Menu> two(Integer id) {
         List<Menu> list = menuService.queryAll(id);
-        log.info("id" + list + "!!!!!!!!");
         return list;
     }
 }
