@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.mapper.MenuMapper">
+    <resultMap id="menu1" type="com.baizhi.entity.Menu">
+        <id column="mid" property="id"></id>
+        <result column="mtitle" property="title"></result>
+        <result column="miconcls" property="iconcls"></result>
+        <result column="murl" property="url"></result>
+        <result column="mparentid" property="parentId"></result>
+        <collection property="list" ofType="com.baizhi.entity.Menu">
+            <id column="nid" property="id"></id>
+            <result column="ntitle" property="title"></result>
+            <result column="niconcls" property="iconcls"></result>
+            <result column="nurl" property="url"></result>
+            <result column="nparentid" property="parentId"></result>
+        </collection>
+    </resultMap>
+
+
+    <select id="queryAll" resultMap="menu1" parameterType="java.lang.Integer">
+        select m.id        mid,
+               m.title     mtitle,
+               m.iconcls   miconcls,
+               m.url       murl,
+               m.parent_id mparentid,
+               n.id        nid,
+               n.title     ntitle,
+               n.iconcls   niconcls,
+               n.url       nurl,
+               n.parent_id nparentid
+        from menu m
+                 left join menu n
+                           on m.id = n.parent_id
+        where n.parent_id = m.id
+    </select>
+</mapper>
