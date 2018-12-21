@@ -6,7 +6,12 @@
             iconCls: 'icon-add',
             text: "添加",
             handler: function () {
-                alert('编辑按钮')
+                $("#addBannerDialog").dialog({
+                    title:"添加Banner",
+                    width:500,
+                    height:300,
+                    href:"${pageContext.request.contextPath}/main/addBanner.jsp"
+                })
             }
         }, '-', {
             text: "修改",
@@ -69,7 +74,7 @@
             pageList:[1,3,5,7,9],
             updateUrl: "${pageContext.request.contextPath}/banner/updateBanner",
             destroyUrl:"${pageContext.request.contextPath}/banner/deleteBanner",
-            url:"${pageContext.request.contextPath}/banner/showAll",
+            url:"${pageContext.request.contextPath}/banner/showByPage",
             toolbar:toolbar,
             view: detailview,
             detailFormatter: function (rowIndex, rowData) {
@@ -95,3 +100,5 @@
         </tr>
     </thead>
 </table>
+<!--  添加图片 -->
+<div id="addBannerDialog"></div>
