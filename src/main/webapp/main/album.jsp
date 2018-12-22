@@ -39,13 +39,13 @@
         }]
     $(function () {
         $('#album').treegrid({
-            method:"get",
-            url:'${pageContext.request.contextPath}',
+            method:"post",
+            url:'${pageContext.request.contextPath}/album/showAll',
             idField:'id',
             treeField:'title',
             columns:[[
                 {field:'title',title:'名字',width:60},
-                {field:'duration',title:'时长',width:80},
+                {field:'duration',title:'描述',width:80},
                 {field:'size',title:'大小',width:80}
             ]],
             fit:true,
