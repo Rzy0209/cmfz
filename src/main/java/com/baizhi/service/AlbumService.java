@@ -18,4 +18,5 @@ public interface AlbumService  {
      * 添加专辑
      */
     void insertAlbum(Album album);
+
 }

@@ -33,7 +33,7 @@ public class AlbumController  {
     @ResponseBody
     @RequestMapping("insertAlbum")
     public void insertAlbum(Album album){
-        log.info(album+"PPPPPPPP");
         albumService.insertAlbum(album);
     }
+
 }

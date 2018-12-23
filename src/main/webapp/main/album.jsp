@@ -57,14 +57,45 @@
             text: "添加音频",
             iconCls: 'icon-remove',
             handler: function () {
-                alert('帮助按钮')
+                $("#chapterAddDialog").dialog({
+                    title:"添加音频",
+                    width:600,
+                    height:400,
+                    modal:true,
+                    closed:true,
+                    href:"${pageContext.request.contextPath}/main/addChapterForm.jsp"
+                });
+                $("#chapterAddDialog").dialog("open");
             }
         }, '-', {
             text: "音频下载",
             iconCls: 'icon-save',
             handler: function () {
-                alert("请选择下载的歌曲")
-                $("#dg").edatagrid("saveRow")
+                var a = $("#album").treegrid("getSelected");
+                if(a==null) {
+                    $.messager.alert({
+                        title: "系统消息",
+                        msg: "请选择要下载的单曲",
+                        icon: "warning"
+                    })
+                }else{
+                    var rows = $("#album").treegrid("getChecked");
+                    for (var i=0;i<rows.length;i++){
+                        //判断该节点是不是叶子节点
+                        var nodes=$("#album").treegrid("getChildren",rows[i].id);
+                        if(nodes.length>0){
+                            $.messager.alert({
+                                title:"系统消息",
+                                msg:"请选择单曲,而非专辑",
+                                icon:"warning"
+                            })
+                        }else{
+                            alert("确认下载?");
+                        }
+                    }
+                }
+
+
 
             }
         }]
@@ -78,7 +109,7 @@
             columns:[[
                 {field:'title',title:'名字',width:60},
                 {field:'duration',title:'描述',width:80},
-                {field:'size',title:'大小',width:80}
+                {field:'size',title:'大小',width:80},
             ]],
             fit:true,
             fitColumns:true,
@@ -86,9 +117,12 @@
         });
     })
 
+
 </script>
 
 <table id="album"></table>
 
 <div id="albumDialog"></div>
 <div id="albumAddDialog"></div>
+<div id="chapterAddDialog"></div>
+<div id="uploadChapterDialog"></div>

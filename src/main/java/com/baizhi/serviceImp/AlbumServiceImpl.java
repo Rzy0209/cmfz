@@ -45,4 +45,5 @@ public class AlbumServiceImpl implements AlbumService {
     public void insertAlbum(Album album) {
         albumMapper.insert(album);
     }
+
 }
