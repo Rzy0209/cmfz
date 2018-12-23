@@ -110,12 +110,16 @@
                 {field:'title',title:'名字',width:60},
                 {field:'duration',title:'描述',width:80},
                 {field:'size',title:'大小',width:80},
+                {field:"xx",title:"播放",formatter:myformatter}
             ]],
             fit:true,
             fitColumns:true,
             toolbar:toolbar,
         });
     })
+        function myformatter(value,index,row) {
+            return "<audio src='${pageContext.request.contextPath}/music/1.mp3'  controls='controls'></audio>"
+        }
 
 
 </script>
