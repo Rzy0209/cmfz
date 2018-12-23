@@ -23,4 +23,17 @@ public class AlbumController  {
     public List<Album> showAll(){
         return albumService.getAll();
     }
+
+    @ResponseBody
+    @RequestMapping("showOne")
+    public Album showOne(Integer id){
+        return albumService.getOne(id);
+    }
+
+    @ResponseBody
+    @RequestMapping("insertAlbum")
+    public void insertAlbum(Album album){
+        log.info(album+"PPPPPPPP");
+        albumService.insertAlbum(album);
+    }
 }

@@ -1,7 +1,6 @@
 package com.baizhi.serviceImp;
 
 import com.baizhi.entity.Album;
-import com.baizhi.entity.Chapter;
 import com.baizhi.mapper.AlbumMapper;
 import com.baizhi.service.AlbumService;
 import org.springframework.stereotype.Service;
@@ -28,5 +27,22 @@ public class AlbumServiceImpl implements AlbumService {
         }else{
             throw new RuntimeException("数据为空，请添加数据");
         }
+    }
+
+    /**
+     *获取专辑详情
+     */
+    @Override
+    public Album getOne(Integer id) {
+        return albumMapper.selectByPrimaryKey(id);
+    }
+
+    /**
+     * 添加专辑
+     * @param album
+     */
+    @Override
+    public void insertAlbum(Album album) {
+        albumMapper.insert(album);
     }
 }
