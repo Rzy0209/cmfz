@@ -80,8 +80,6 @@
                     })
                 }else{
                     var rows = $("#album").treegrid("getChecked");
-
-
                     for (var i=0;i<rows.length;i++){
                         //判断该节点是不是叶子节点
                         var nodes=$("#album").treegrid("getChildren",rows[i].id);
@@ -93,8 +91,7 @@
                             })
                         }else{
                             var aa = $("#album").treegrid("getSelected");
-                            console.info(aa);
-                          window.location.href="${pageContext.request.contextPath}/chapter/downLoad?url="+aa.url                        }
+                            window.location.href="${pageContext.request.contextPath}/chapter/downLoad?url="+aa.url                        }
                     }
 
                 }
@@ -104,6 +101,10 @@
 
     $(function () {
         $('#album').treegrid({
+            onDblClickRow:function(row){
+                $("#audio_dialog").dialog("open")
+                $("#audio_url").prop("src","${pageContext.request.contextPath}/music/"+row.url)
+            },
             method:"post",
             url:'${pageContext.request.contextPath}/album/showAll',
             idField:'id',
@@ -112,16 +113,15 @@
                 {field:'title',title:'名字',width:60},
                 {field:'duration',title:'描述',width:80},
                 {field:'size',title:'大小',width:80},
-                {field:"xx",title:"播放",formatter:myformatter}
             ]],
             fit:true,
             fitColumns:true,
             toolbar:toolbar,
         });
     })
-        function myformatter(value,index,row) {
+        /*function myformatter(value,index,row) {
             return "<audio src='${pageContext.request.contextPath}/music/1.mp3'  controls='controls'></audio>"
-        }
+        }*/
 
 
 </script>
@@ -132,3 +132,8 @@
 <div id="albumAddDialog"></div>
 <div id="chapterAddDialog"></div>
 <div id="uploadChapterDialog"></div>
+
+<div id="audio_dialog" class="easyui-dialog" title="My Dialog" style="width:400px;height:200px;"
+     data-options="iconCls:'icon-save',resizable:true,modal:true,closed:true">
+    <audio id="audio_url" src="" controls="controls" autoplay="autoplay" loop="loop"></audio>
+</div>

@@ -147,6 +147,7 @@
             <input type="text"  name="publishDate" id="publishDate" />
         </td>
     </tr>
+
 </table>
 </form>
 <a id="addAlbumBtn">添加专辑</a><br/><a id="clearAlumBtn">重置</a>
