@@ -5,7 +5,7 @@
             text: "专辑详情",
             handler: function () {
              var a = $("#album").treegrid("getSelected");
-              if(a==null){
+                if(a==null){
                   $.messager.alert({
                       title:"系统消息",
                       msg:"请选择要查看的内容",
@@ -80,6 +80,8 @@
                     })
                 }else{
                     var rows = $("#album").treegrid("getChecked");
+
+
                     for (var i=0;i<rows.length;i++){
                         //判断该节点是不是叶子节点
                         var nodes=$("#album").treegrid("getChildren",rows[i].id);
@@ -90,12 +92,12 @@
                                 icon:"warning"
                             })
                         }else{
-                            alert("确认下载?");
-                        }
+                            var aa = $("#album").treegrid("getSelected");
+                            console.info(aa);
+                          window.location.href="${pageContext.request.contextPath}/chapter/downLoad?url="+aa.url                        }
                     }
+
                 }
-
-
 
             }
         }]
