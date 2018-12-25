@@ -26,11 +26,11 @@ public class ChapterController  {
     @ResponseBody
     @RequestMapping("downLoad")
     public void downLoad( String url,HttpSession session,HttpServletResponse response){
+
         String realPath = session.getServletContext().getRealPath("/music");
         String filePath = realPath + "/" +url;
         File file = new File(filePath);
         try {
-            //response.setHeader("Content-Disposition", "attachment;fileName=" +file.getName()+"=utf-8");
             response.setHeader("content-disposition", "attachment;filename=" + URLEncoder.encode(file.getName(), "UTF-8"));
             response.setContentType("audio/mpeg");
             FileInputStream in = new FileInputStream(file);
@@ -45,8 +45,6 @@ public class ChapterController  {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 }
 

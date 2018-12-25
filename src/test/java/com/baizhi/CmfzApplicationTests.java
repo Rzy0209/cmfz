@@ -4,22 +4,22 @@ import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
-import cn.afterturn.easypoi.util.PoiPublicUtil;
 import com.baizhi.entity.Album;
-import com.baizhi.entity.Chapter;
+import com.baizhi.entity.Province;
 import com.baizhi.mapper.AlbumMapper;
 import com.baizhi.mapper.ChapterMapper;
+import com.baizhi.mapper.UserMapper;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import javax.annotation.Resource;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -29,6 +29,9 @@ public class CmfzApplicationTests {
     AlbumMapper albumMapper;
     @Resource
     ChapterMapper chapterMapper;
+    @Resource
+    UserMapper userMapper;
+
 
     @Test
     public void contextLoads() {
@@ -70,5 +73,29 @@ public class CmfzApplicationTests {
             System.out.println(album);
         }
     }
+
+    @Test
+    public void test4(){
+        Integer one = userMapper.getOneWeek();
+
+        System.out.println(one);
+    }
+    @Test
+    public void test5(){
+        Integer two = userMapper.getTwoWeek();
+        System.out.println(two);
+    }
+    @Test
+    public void test6(){
+        Integer three = userMapper.getThreeWeek();
+        System.out.println(three);
+    }
+
+    @Test
+    public void test7(){
+        List<Province> province = userMapper.getProvince();
+        System.out.println(province);
+    }
+
 }
 

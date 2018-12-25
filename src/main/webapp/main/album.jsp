@@ -128,7 +128,6 @@
 <div id="albumAddDialog"></div>
 <div id="chapterAddDialog"></div>
 <div id="uploadChapterDialog"></div>
-
 <div id="audio_dialog" class="easyui-dialog" title="My Dialog" style="width:400px;height:200px;"
      data-options="iconCls:'icon-save',resizable:true,modal:true,closed:true">
     <audio id="audio_url" src="" controls="controls" autoplay="autoplay" loop="loop"></audio>

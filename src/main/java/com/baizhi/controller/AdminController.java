@@ -19,7 +19,7 @@ public class AdminController {
         Admin admin = adminService.getOne(name, password);
         if (admin != null) {
             session.setAttribute("name", admin.getName());
-            return "redirect:/main/main.jsp";
+            return "redirect:/main/active.jsp";
         } else {
             return "redirect:/login.jsp";
         }

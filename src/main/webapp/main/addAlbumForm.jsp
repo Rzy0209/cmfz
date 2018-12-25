@@ -66,88 +66,88 @@
 </script>
 
 <form id="addAlbumForm" method="post">
-<table cellpadding="0" cellspacing="0" border="0"
-       class="form_table">
-    <tr>
-        <td valign="middle" align="right">
+    <table cellpadding="0" cellspacing="0" border="0"
+           class="form_table">
+        <tr>
+            <td valign="middle" align="right">
 
-        </td>
-        <td valign="middle" align="right">
-            <input type="text"  name="id" id="id" hidden />
-        </td>
-    </tr>
+            </td>
+            <td valign="middle" align="right">
+                <input type="text"  name="id" id="id" hidden />
+            </td>
+        </tr>
 
-    <tr>
-        <td valign="middle" align="right">
-            专辑标题:
-        </td>
-        <td valign="middle" align="right">
-            <input type="text"  name="title" id="title" />
-        </td>
-    </tr>
-    <tr>
-        <td valign="middle" align="right">
-            歌曲数量:
-        </td>
-        <td valign="middle" align="right">
-            <input type="text"  name="count" id="count"  />
-        </td>
-    </tr>
+        <tr>
+            <td valign="middle" align="right">
+                专辑标题:
+            </td>
+            <td valign="middle" align="right">
+                <input type="text"  name="title" id="title" />
+            </td>
+        </tr>
+        <tr>
+            <td valign="middle" align="right">
+                歌曲数量:
+            </td>
+            <td valign="middle" align="right">
+                <input type="text"  name="count" id="count"  />
+            </td>
+        </tr>
 
-    <tr>
-        <td valign="middle" align="right">
-            封面:
-        </td>
-        <td valign="middle" align="right">
-            <input type="text" name="coverImg" id="coverImg"/>
-        </td>
-    </tr>
+        <tr>
+            <td valign="middle" align="right">
+                封面:
+            </td>
+            <td valign="middle" align="right">
+                <input type="text" name="coverImg" id="coverImg"/>
+            </td>
+        </tr>
 
-    <tr>
-        <td valign="middle" align="right">
-            评分:
-        </td>
-        <td valign="middle" align="right">
-            <input type="text"  name="score" id="score"  />
-        </td>
-    </tr>
+        <tr>
+            <td valign="middle" align="right">
+                评分:
+            </td>
+            <td valign="middle" align="right">
+                <input type="text"  name="score" id="score"  />
+            </td>
+        </tr>
 
-    <tr>
-        <td valign="middle" align="right">
-            作者:
-        </td>
-        <td valign="middle" align="right">
-            <input type="text"  name="author" id="author"  />
-        </td>
-    </tr>
+        <tr>
+            <td valign="middle" align="right">
+                作者:
+            </td>
+            <td valign="middle" align="right">
+                <input type="text"  name="author" id="author"  />
+            </td>
+        </tr>
 
-    <tr>
-        <td valign="middle" align="right">
-            播音:
-        </td>
-        <td valign="middle" align="right">
-            <input type="text"  name="broadcast" id="broadcast"/>
-        </td>
-    </tr>
+        <tr>
+            <td valign="middle" align="right">
+                播音:
+            </td>
+            <td valign="middle" align="right">
+                <input type="text"  name="broadcast" id="broadcast"/>
+            </td>
+        </tr>
 
-    <tr>
-        <td valign="middle" align="right">
-            简介:
-        </td>
-        <td valign="middle" align="right">
-            <input type="text"  name="brief" id="brief" />
-        </td>
-    </tr>
+        <tr>
+            <td valign="middle" align="right">
+                简介:
+            </td>
+            <td valign="middle" align="right">
+                <input type="text"  name="brief" id="brief" />
+            </td>
+        </tr>
 
-    <tr>
-        <td valign="middle" align="right">
-            发行日期:
-        </td>
-        <td valign="middle" align="right">
-            <input type="text"  name="publishDate" id="publishDate" />
-        </td>
-    </tr>
+        <tr>
+            <td valign="middle" align="right">
+                发行日期:
+            </td>
+            <td valign="middle" align="right">
+                <input type="text"  name="publishDate" id="publishDate" />
+            </td>
+        </tr>
 
-</table>
+    </table>
 </form>
 <a id="addAlbumBtn">添加专辑</a><br/><a id="clearAlumBtn">重置</a>
