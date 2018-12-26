@@ -15,11 +15,12 @@ public class AdminController {
     AdminService adminService;
 
     @RequestMapping("login")
-    public String login(String name, String password, HttpSession session) {
+    public String login(String name, String password,String code, HttpSession session) {
         Admin admin = adminService.getOne(name, password);
-        if (admin != null) {
+        String  cd = (String) session.getAttribute("code");
+        if (admin != null && cd.equals(code)) {
             session.setAttribute("name", admin.getName());
-            return "redirect:/main/active.jsp";
+            return "redirect:/main/main.jsp";
         } else {
             return "redirect:/login.jsp";
         }

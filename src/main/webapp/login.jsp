@@ -62,7 +62,7 @@
                 <td>&nbsp;</td>
                 <th>验证码:</th>
                 <td>
-                    <input type="text" id="enCode" name="enCode" class="text captcha" maxlength="4" autocomplete="off"/>
+                    <input type="text" id="enCode" name="code" class="text captcha" maxlength="4" autocomplete="off"/>
                     <img id="captchaImage" class="captchaImage" src="img/captcha.jpg" title="点击更换验证码"/>
                 </td>
             </tr>
