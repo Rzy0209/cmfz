@@ -1,4 +1,6 @@
-﻿<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" isELIgnored="false" %>
+﻿<%@page  contentType="text/html; charset=utf-8" pageEncoding="utf-8" isELIgnored="false" %>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -60,10 +62,8 @@
         持名法州后台管理系统
     </div>
     <div style="font-size: 16px;color: #FAF7F7;font-family: 楷体;width: 300px;float:right;padding-top:15px">
-        欢迎您:"${sessionScope.name}" &nbsp;<a href="#" class="easyui-linkbutton"
-                                            data-options="iconCls:'icon-edit'">修改密码</a>&nbsp;&nbsp;<a href="#"
-                                                                                                      class="easyui-linkbutton"
-                                                                                                      data-options="iconCls:'icon-01'">退出系统</a>
+        欢迎你: &nbsp;<shiro:principal></shiro:principal>
+        <a href="${pageContext.request.contextPath}/shiro/logout"  style="background-color: #d84f4b">登出</a>
     </div>
 </div>
 <div data-options="region:'south',split:true" style="height: 40px;background: #5C160C">

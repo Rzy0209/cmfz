@@ -17,7 +17,7 @@
         $(function () {
             //点击更换验证码：
             $("#captchaImage").click(function () {//点击更换验证码
-                $("#captchaImage").prop("src", "${pageContext.request.contextPath}/code/creatCode?time=" + new Date())
+                $("#captchaImage").prop("src", "${pageContext.request.contextPath}/code/creatCode?time="+new Date())
             });
 
 
@@ -35,7 +35,7 @@
 <body>
 
 <div class="login">
-    <form id="loginForm" action="${pageContext.request.contextPath}/admin/login" method="post">
+    <form id="loginForm" action="${pageContext.request.contextPath}/shiro/login" method="post">
         <table>
             <tbody>
             <tr>
@@ -58,14 +58,14 @@
                 </td>
             </tr>
 
-            <tr>
+        <%--   <tr>
                 <td>&nbsp;</td>
                 <th>验证码:</th>
                 <td>
                     <input type="text" id="enCode" name="code" class="text captcha" maxlength="4" autocomplete="off"/>
                     <img id="captchaImage" class="captchaImage" src="img/captcha.jpg" title="点击更换验证码"/>
                 </td>
-            </tr>
+            </tr>--%>
             <tr>
                 <td>
                     &nbsp;
